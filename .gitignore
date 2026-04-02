@@ -1,0 +1,66 @@
+# .gitignore for .NET / Visual Studio projects
+
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Visual Studio Code
+.vscode/
+
+# Rider
+.idea/
+
+# Build results
+[Bb]in/
+[Oo]bj/
+out/
+artifacts/
+
+# Publish output
+publish/
+*.Publish.xml
+
+# NuGet
+*.nupkg
+packages/
+
+# Rider and Resharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+
+# Dotnet
+project.lock.json
+project.fragment.lock.json
+
+# Logs
+*.log
+
+# Test results
+TestResults/
+*.trx
+
+# User secrets and local settings
+secrets.json
+appsettings.Development.json
+
+# IIS Express
+
+/.vs/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*~
+*.swp
+*.tmp
+*.temp
+
+# Other
+.vagrant/
+
+# End of file
