@@ -27,5 +27,25 @@ namespace Backend.Controllers
                 Alcohol = b.Alcohol
             }).ToListAsync();
 
+        [HttpGet("{id}")]
+        public async Task<ActionResult<BeerDto>> GetById(int id)
+        {
+            var beer = await _context.Beers.FindAsync(id);
+
+            if(beer == null)
+            {
+                return NotFound();
+            }
+
+            var beerDto = new BeerDto
+            {
+                Id = beer.BeerId,
+                Name = beer.Name,
+                Alcohol = beer.Alcohol,
+                BrandId = beer.BrandId
+            };
+
+            return Ok(beerDto);
+        }
     }
 }
