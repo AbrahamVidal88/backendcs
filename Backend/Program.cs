@@ -13,8 +13,8 @@ builder.Services.AddSingleton<IPeopleService, People2Service>();
 builder.Services.AddKeyedSingleton<IRandomService, RandomService>("randomSingleton");
 builder.Services.AddKeyedScoped<IRandomService, RandomService>("randomScoped");
 builder.Services.AddKeyedTransient<IRandomService, RandomService>("randomTransient");
-
 builder.Services.AddScoped<IPostsService, PostsService>();
+builder.Services.AddScoped<IBeerService, BeerService>();
 
 builder.Services.AddHttpClient<IPostsService, PostsService>(c =>
 {
