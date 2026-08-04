@@ -40,7 +40,25 @@ namespace Backend.Services
         }
         public async Task<BeerDto> AddBeer(BeerInsertDto beerInsertDto)
         {
-            throw new NotImplementedException();
+            var beer = new Beer
+            {
+                Name = beerInsertDto.Name,
+                BrandId = beerInsertDto.BrandId,
+                Alcohol = beerInsertDto.Alcohol
+            };
+
+            await _context.AddAsync(beer);
+            await _context.SaveChangesAsync();
+
+            var beerDto = new BeerDto
+            {
+                Id = beer.BeerId,
+                Name = beer.Name,
+                Alcohol = beer.Alcohol,
+                BrandId = beer.BrandId
+            };
+
+            return beerDto;
         }
         public async Task<BeerDto> UpdateBeer(int id, BeerUpdateDto beerUpdateDto)
         {
